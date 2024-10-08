@@ -272,75 +272,76 @@
 			? ''
 			: 'invisible'}"
 	>
-		<div class="px-2.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400">
+	<div class="px-2.5 flex justify-center text-gray-800 dark:text-gray-200">
+		<h1> MODELS</h1>
+	</div>
+	<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+		<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
 			<a
-				id="sidebar-new-chat-button"
-				class="flex flex-1 justify-between rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
-				href="/"
-				draggable="false"
-				on:click={async () => {
-					selectedChatId = null;
-					await goto('/');
-					const newChatButton = document.getElementById('new-chat-button');
-					setTimeout(() => {
-						newChatButton?.click();
-						if ($mobile) {
-							showSidebar.set(false);
-						}
-					}, 0);
-				}}
-			>
-				<div class="self-center mx-1.5">
-					<img
-						crossorigin="anonymous"
-						src="{WEBUI_BASE_URL}/static/favicon.png"
-						class=" size-6 -translate-x-1.5 rounded-full"
-						alt="logo"
-					/>
-				</div>
-				<div class=" self-center font-medium text-sm text-gray-850 dark:text-white font-primary">
-					{$i18n.t('New Chat')}
-				</div>
-				<div class="self-center ml-auto">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 20 20"
-						fill="currentColor"
-						class="size-5"
-					>
-						<path
-							d="M5.433 13.917l1.262-3.155A4 4 0 017.58 9.42l6.92-6.918a2.121 2.121 0 013 3l-6.92 6.918c-.383.383-.84.685-1.343.886l-3.154 1.262a.5.5 0 01-.65-.65z"
-						/>
-						<path
-							d="M3.5 5.75c0-.69.56-1.25 1.25-1.25H10A.75.75 0 0010 3H4.75A2.75 2.75 0 002 5.75v9.5A2.75 2.75 0 004.75 18h9.5A2.75 2.75 0 0017 15.25V10a.75.75 0 00-1.5 0v5.25c0 .69-.56 1.25-1.25 1.25h-9.5c-.69 0-1.25-.56-1.25-1.25v-9.5z"
-						/>
-					</svg>
-				</div>
-			</a>
+			id="sidebar-new-chat-button"
+			class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+			href="/storefront"
+			draggable="false"
+			on:click={async () => {
+				await goto('/storefront');
+			}}
+		>
+			<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+				Storefront
+			</div>
+		</div>
+	</div>
 
-			<button
-				class=" cursor-pointer px-2 py-2 flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition"
-				on:click={() => {
-					showSidebar.set(!$showSidebar);
-				}}
-			>
-				<div class=" m-auto self-center">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="2"
-						stroke="currentColor"
-						class="size-5"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
-						/>
-					</svg>
-				</div>
-			</button>
+	<div class="px-2.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400 mb-5">
+		<a
+			id="sidebar-new-chat-button"
+			class="flex flex-1 justify-between rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+			href="/"
+			draggable="false"
+			on:click={async () => {
+				selectedChatId = null;
+				await goto('/');
+				const newChatButton = document.getElementById('new-chat-button');
+				setTimeout(() => {
+					newChatButton?.click();
+					if ($mobile) {
+						showSidebar.set(false);
+					}
+				}, 0);
+			}}
+		>
+			<div class=" self-center font-medium text-sm text-gray-850 dark:text-white font-primary">
+				NIPRGPT
+			</div>
+		</a>
+
+		<button
+			class=" cursor-pointer px-2 py-2 flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+			on:click={() => {
+				showSidebar.set(!$showSidebar);
+			}}
+		>
+			<div class=" m-auto self-center">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="2"
+					stroke="currentColor"
+					class="size-5"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+					/>
+				</svg>
+			</div>
+		</button>
+		</div>
+
+		<div class="px-2.5 flex justify-center text-gray-800 dark:text-gray-200">
+			<h1> MY NIPRGPT</h1>
 		</div>
 
 		{#if $user?.role === 'admin'}
@@ -358,29 +359,164 @@
 					}}
 					draggable="false"
 				>
-					<div class="self-center">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke-width="2"
-							stroke="currentColor"
-							class="size-[1.1rem]"
-						>
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 0 0 2.25-2.25V6a2.25 2.25 0 0 0-2.25-2.25H6A2.25 2.25 0 0 0 3.75 6v2.25A2.25 2.25 0 0 0 6 10.5Zm0 9.75h2.25A2.25 2.25 0 0 0 10.5 18v-2.25a2.25 2.25 0 0 0-2.25-2.25H6a2.25 2.25 0 0 0-2.25 2.25V18A2.25 2.25 0 0 0 6 20.25Zm9.75-9.75H18a2.25 2.25 0 0 0 2.25-2.25V6A2.25 2.25 0 0 0 18 3.75h-2.25A2.25 2.25 0 0 0 13.5 6v2.25a2.25 2.25 0 0 0 2.25 2.25Z"
-							/>
-						</svg>
-					</div>
-
 					<div class="flex self-center">
 						<div class=" self-center font-medium text-sm font-primary">{$i18n.t('Workspace')}</div>
 					</div>
 				</a>
 			</div>
 		{/if}
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/workspaces"
+				draggable="false"
+				on:click={async () => {
+					await goto('/workspaces');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Workspaces
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex justify-center text-gray-800 dark:text-gray-200">
+			<h1> RESOURCES</h1>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/guidebook"
+				draggable="false"
+				on:click={async () => {
+					await goto('/guidebook');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Guidance for User
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/genai"
+				draggable="false"
+				on:click={async () => {
+					await goto('/genai');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					About Generative AI
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/history"
+				draggable="false"
+				on:click={async () => {
+					await goto('/history');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					About NIPRGPT
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/rag"
+				draggable="false"
+				on:click={async () => {
+					await goto('/rag');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Retrieval Augmented Generation (RAG)
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400 mb-5">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/roadmap"
+				draggable="false"
+				on:click={async () => {
+					await goto('/roadmap');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Roadmap
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex justify-center text-gray-800 dark:text-gray-200">
+			<h1> COMMUNICATION</h1>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/survey"
+				draggable="false"
+				on:click={async () => {
+					await goto('/survey');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Tell Us Your Experience
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<a
+				id="sidebar-new-chat-button"
+				class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				href="/faq"
+				draggable="false"
+				on:click={async () => {
+					await goto('/faq');
+				}}
+			>
+				<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Frequently Asked Questions
+				</div>
+			</div>
+		</div>
+
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400 mb-5">
+			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+				<div class="ml-2 font-medium text-sm text-gray-850 dark:text-white font-primary">
+					Feedback & Support
+				</div>
+			</div>
+		</div>
 
 		<div
 			class="relative flex flex-col flex-1 overflow-y-auto {$temporaryChatEnabled
@@ -557,39 +693,6 @@
 							<div class=" ">Loading...</div>
 						</div>
 					</Loader>
-				{/if}
-			</div>
-		</div>
-
-		<div class="px-2.5 pb-safe-bottom">
-			<!-- <hr class=" border-gray-900 mb-1 w-full" /> -->
-
-			<div class="flex flex-col font-primary">
-				{#if $user !== undefined}
-					<UserMenu
-						role={$user.role}
-						on:show={(e) => {
-							if (e.detail === 'archived-chat') {
-								showArchivedChats.set(true);
-							}
-						}}
-					>
-						<button
-							class=" flex rounded-xl py-3 px-3.5 w-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
-							on:click={() => {
-								showDropdown = !showDropdown;
-							}}
-						>
-							<div class=" self-center mr-3">
-								<img
-									src={$user.profile_image_url}
-									class=" max-w-[30px] object-cover rounded-full"
-									alt="User profile"
-								/>
-							</div>
-							<div class=" self-center font-medium">{$user.name}</div>
-						</button>
-					</UserMenu>
 				{/if}
 			</div>
 		</div>

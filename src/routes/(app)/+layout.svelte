@@ -38,6 +38,7 @@
 
 	import SettingsModal from '$lib/components/chat/SettingsModal.svelte';
 	import Sidebar from '$lib/components/layout/Sidebar.svelte';
+	import Header from '$lib/components/layout/Header.svelte';
 	import ChangelogModal from '$lib/components/ChangelogModal.svelte';
 	import AccountPending from '$lib/components/layout/Overlay/AccountPending.svelte';
 	import { getFunctions } from '$lib/apis/functions';
@@ -238,6 +239,8 @@
 {/if}
 
 <div class="app relative">
+	<Header />
+
 	<div
 		class=" text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-900 h-screen max-h-[100dvh] overflow-auto flex flex-row"
 	>
@@ -333,7 +336,7 @@
 		top: 5px;
 		right: 5px;
 
-		font-size: 0.9rem;
+		font-size: 1rem;
 		padding: 0.15rem;
 		background-color: #828282;
 
