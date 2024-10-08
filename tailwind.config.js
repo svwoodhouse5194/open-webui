@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+import flowbitePlugin from 'flowbite/plugin'
+
 export default {
 	darkMode: 'class',
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: ['./src/**/*.{html,js,svelte,ts}', './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
 			colors: {
@@ -18,7 +20,19 @@ export default {
 					850: 'var(--color-gray-850, #262626)',
 					900: 'var(--color-gray-900, #171717)',
 					950: 'var(--color-gray-950, #0d0d0d)'
-				}
+				},
+				primary: {
+					50: '#FFF5F2',
+					100: '#FFF1EE',
+					200: '#FFE4DE',
+					300: '#FFD5CC',
+					400: '#FFBCAD',
+					500: '#FE795D',
+					600: '#EF562F',
+					700: '#EB4F27',
+					800: '#CC4522',
+					900: '#A5371B'
+				  }
 			},
 			typography: {
 				DEFAULT: {
@@ -36,5 +50,5 @@ export default {
 			}
 		}
 	},
-	plugins: [require('@tailwindcss/typography')]
+	plugins: [require('@tailwindcss/typography'), flowbitePlugin]
 };
