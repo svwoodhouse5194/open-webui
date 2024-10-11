@@ -7,8 +7,13 @@
 
 </script>
 
-<div class="flex justify-between items-center bg-gray-900 m-0 text-gray-300">
-    <div class="text-3xl">NIPRGPT</div>
+<div class="flex justify-between items-center bg-gray-900 m-0 text-gray-300 p-2 shadow-gray-500/50">
+    <div class="flex flex-row">
+        <div class="size-16 content-center mr-5">
+            <img src="niprgpt_logo.webp" alt="logo"/>
+        </div>
+        <div class="text-3xl content-center">NIPRGPT</div>
+    </div>
     <div class="text-2xl">{$page.url.pathname.slice(1).toUpperCase()}</div>
     <div class="px-2.5 pb-safe-bottom">
         <!-- <hr class=" border-gray-900 mb-1 w-full" /> -->
