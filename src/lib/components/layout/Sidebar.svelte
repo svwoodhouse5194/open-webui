@@ -291,11 +291,11 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="px-2.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400 mb-5">
-		<a
+	<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400 mb-5">
+		<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
+			<a
 			id="sidebar-new-chat-button"
-			class="flex flex-1 justify-between rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+			class="flex-grow flex rounded-xl px-2 h-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
 			href="/"
 			draggable="false"
 			on:click={async () => {
@@ -310,41 +310,18 @@
 				}, 0);
 			}}
 		>
-			<div class=" self-center font-medium text-sm text-gray-850 dark:text-white font-primary">
+			<div class="font-medium text-sm text-gray-850 dark:text-white font-primary">
 				NIPRGPT
 			</div>
-		</a>
-
-		<button
-			class=" cursor-pointer px-2 py-2 flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition"
-			on:click={() => {
-				showSidebar.set(!$showSidebar);
-			}}
-		>
-			<div class=" m-auto self-center">
-				<svg
-					xmlns="http://www.w3.org/2000/svg"
-					fill="none"
-					viewBox="0 0 24 24"
-					stroke-width="2"
-					stroke="currentColor"
-					class="size-5"
-				>
-					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
-					/>
-				</svg>
-			</div>
-		</button>
 		</div>
+	</div>
 
-		<div class="px-2.5 flex justify-center text-gray-800 dark:text-gray-200">
+		<div class="px-4 flex justify-center text-gray-800 dark:text-gray-200">
 			<h1> MY NIPRGPT</h1>
 		</div>
 
-		{#if $user?.role === 'admin'}
+		<!-- Default Workspace -->
+		<!-- {#if $user?.role === 'admin'}
 			<div class="px-2.5 flex justify-center text-gray-800 dark:text-gray-200">
 				<a
 					class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition"
@@ -364,9 +341,9 @@
 					</div>
 				</a>
 			</div>
-		{/if}
+		{/if} -->
 
-		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400">
+		<div class="px-2.5 flex space-x-1 text-gray-600 dark:text-gray-400 mb-5">
 			<div class="flex-grow flex space-x-3 rounded-xl px-2.5 py-2 hover:bg-gray-100 dark:hover:bg-gray-900 transition">
 				<a
 				id="sidebar-new-chat-button"
